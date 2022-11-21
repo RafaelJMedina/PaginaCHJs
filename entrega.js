@@ -127,5 +127,3 @@ function ofertaCarrito() {
     });
   }
 }
-
-//  else {return alert("No hay ofertas si no llevas mas de dos productos!");}
