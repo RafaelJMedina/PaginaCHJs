@@ -103,13 +103,6 @@ function ofertaCarrito() {
 
   seleccion = prompt("Hay productos en oferta!!! Deseas verlo? si - no");
 
-  for (itemsElegidos of carrito) {
-    ofertCarrito += ` \n - ${itemsElegidos.nombre}`;
-    ofertafinalCarrito += itemsElegidos.precio;
-  }
-
-  descuento = (ofertafinalCarrito / 100) * 20;
-
   const ofertas = productos.filter((Producto) => {
     if (Producto.precio > 9000 && seleccion === "si") {
       alert(
@@ -118,6 +111,12 @@ function ofertaCarrito() {
     }
   });
 
+  for (itemsElegidos of carrito) {
+    ofertCarrito += ` \n - ${itemsElegidos.nombre}`;
+    ofertafinalCarrito += itemsElegidos.precio;
+  }
+
+  descuento = (ofertafinalCarrito / 100) * 20;
   while (seleccion === "no") {
     alert("Gracias por la compra!");
     carrito.map((carritoFinal) => {
