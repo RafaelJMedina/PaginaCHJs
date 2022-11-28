@@ -4,85 +4,85 @@ const productos = [
     // TECNOLOGIA
     {
         id: "tecnologia-01",
-        titulo: "Tecnologia 01",
+        titulo: "3080 TI",
         imagen: "./img/Tec/3080.jpg",
         categoria: {
             nombre: "Tecnologia",
             id: "tecnologias"
         },
-        precio: 1000
+        precio: 170000
     },
     {
         id: "tecnologia-02",
-        titulo: "Tecnologia 02",
+        titulo: "Smart Tv 55'",
         imagen: "./img/Tec/tv.jpg",
         categoria: {
             nombre: "Tecnologia",
             id: "tecnologias"
         },
-        precio: 1000
+        precio: 125000
     },
     {
         id: "tecnologia-03",
-        titulo: "Tecnologia 03",
+        titulo: "Netbook Alien-Ware",
         imagen: "./img/Tec/alienware.jpg",
         categoria: {
             nombre: "Tecnologia",
             id: "tecnologias"
         },
-        precio: 1000
+        precio: 400000
     },
     // ROPA
     {
         id: "camiseta-01",
-        titulo: "Camiseta 01",
+        titulo: "Camiseta Negra",
         imagen: "./img/Camisetas/220px-Camiseta-negra.jpg",
         categoria: {
             nombre: "Camisetas",
             id: "ropas"
         },
-        precio: 1000
+        precio: 6000
     },
     {
         id: "camiseta-02",
-        titulo: "Camiseta 02",
+        titulo: "Camiseta Blanca",
         imagen: "./img/Camisetas/mockup-camiseta.jpg",
         categoria: {
             nombre: "Camisetas",
             id: "ropas"
         },
-        precio: 1000
+        precio: 7500
     },
     {
         id: "camiseta-03",
-        titulo: "Camiseta 03",
+        titulo: "Camiseta de River",
         imagen: "./img/Camisetas/camisetariver.jpg",
         categoria: {
             nombre: "Camisetas",
             id: "ropas"
         },
-        precio: 1000
+        precio: 9500
     },
     // DEPORTE Y VARIOS
     {
         id: "deporte-01",
-        titulo: "Deportes 01",
+        titulo: "Botines del 10",
         imagen: "./img/Deportes/botinesMessi.png",
         categoria: {
             nombre: "Deporte",
             id: "deportes"
         },
-        precio: 1000
+        precio: 30000
     },
     {
         id: "deporte-02",
-        titulo: "Deportes 02",
+        titulo: "Pelota Al Rihla",
         imagen: "./img/Deportes/pelota-oficial-copa-mundial-de-la-fifa-qatar-2022_862x485.jpg",
         categoria: {
             nombre: "Deporte",
             id: "deportes"
         },
-        precio: 1000
+        precio: 12.999
     }
 ];
 
