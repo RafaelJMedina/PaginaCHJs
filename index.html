@@ -6,9 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comisión 34085</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-
-  <script src="./entrega.js"></script>
+<div class="wrapper">
+  <aside>
+    <header>
+      <h1 class="logo">MercadoSalta</h1>
+    </header>
+    <nav>
+        <ul class="menu">
+         <li>
+            <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+         </li>
+          <li>
+            <button id="tecnologia" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Tecnologia</button>
+          </li>
+          <li>
+            <button id="ropa" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Ropa</button>
+          </li>
+          <li>
+             <button id="deportes" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Deportes</button>
+          </li>
+          <li>
+            <a class="boton-menu boton-carrito" href="./carrito.html">
+              <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <footer>
+       <p class="texto-footer">© 2022 Rafael Medina</p>
+      </footer>
+  </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </main>
+    </div>
+    
+<script src="./js/main.js"></script>
 </body>
 </html
