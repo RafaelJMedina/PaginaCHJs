@@ -1,7 +1,4 @@
-//PRODUCTOS
-
 const productos = [
-    // TECNOLOGIA
     {
         id: "tecnologia-01",
         titulo: "3080 TI",
@@ -32,7 +29,6 @@ const productos = [
         },
         precio: 400000
     },
-    // ROPA
     {
         id: "camiseta-01",
         titulo: "Camiseta Negra",
@@ -63,7 +59,6 @@ const productos = [
         },
         precio: 9500
     },
-    // DEPORTE Y VARIOS
     {
         id: "deporte-01",
         titulo: "Botines del 10",
@@ -93,7 +88,7 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
 
 
-function cargarProductos(productosElegidos) {
+async function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
 
@@ -102,11 +97,14 @@ function cargarProductos(productosElegidos) {
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
-            <div class="producto-detalles">
-                <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">$${producto.precio}</p>
-                <button class="producto-agregar" id="${producto.id}">Agregar</button>
+            
+            <div class="card" style="width: 18rem;">
+            <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
+            <div class="card-body">
+                <h5 class="card-title">${producto.titulo}</h5>
+                <p class="card-text">$${producto.precio}</p>
+                <button class="producto-agregar" onclick="Toast.fire" id="${producto.id}">Agregar</button>
+            </div>
             </div>
         `;
 

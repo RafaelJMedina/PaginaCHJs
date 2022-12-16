@@ -51,7 +51,7 @@
                             <p>Total:</p>
                             <p id="total">$3000</p>
                         </div>
-                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                        <button on:click={showAlert} id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
                     </div>
                 </div>
 
@@ -61,6 +61,8 @@
         </main>
     </div>
     
-    <script src="./carrito.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/alertcarrito.js"></script>
 </body>
 </html>
