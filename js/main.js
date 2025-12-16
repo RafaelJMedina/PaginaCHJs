@@ -77,7 +77,7 @@ const productos = [
             nombre: "Deporte",
             id: "deportes"
         },
-        precio: 12.999
+        precio: 12999
     }
 ];
 
@@ -103,7 +103,7 @@ async function cargarProductos(productosElegidos) {
             <div class="card-body">
                 <h5 class="card-title">${producto.titulo}</h5>
                 <p class="card-text">$${producto.precio}</p>
-                <button class="producto-agregar" onclick="Toast.fire" id="${producto.id}">Agregar</button>
+                <button class="producto-agregar" id="${producto.id}">Agregar</button>
             </div>
             </div>
         `;
@@ -155,6 +155,24 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+      
+    Toast.fire({
+        icon: 'success',
+        title: 'Producto agregado'
+    })
+
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
@@ -162,16 +180,32 @@ function agregarAlCarrito(e) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
         productosEnCarrito[index].cantidad++;
     } else {
-        productoAgregado.cantidad = 1;
-        productosEnCarrito.push(productoAgregado);
+        // En vez de modificar el objeto original, creamos una copia
+        // usando el operador spread (...) y le agregamos la propiedad cantidad.
+        const nuevoProducto = { ...productoAgregado, cantidad: 1 };
+        productosEnCarrito.push(nuevoProducto);
     }
 
     actualizarNumerito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    console.log("¡Producto agregado!", idBoton); 
 }
 
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
+
+function encontrarProductoMasBarato() {
+    const productoMasBarato = productos.reduce((acumulador, producto) => {
+        if (producto.precio < acumulador.precio) {
+            return producto;
+        } else {
+            return acumulador;
+        }
+    });
+
+    console.log(`El producto más barato es: ${productoMasBarato.titulo} ($${productoMasBarato.precio})`);
+}
+encontrarProductoMasBarato();
